@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for rec in recipes %}
+        {{recipes.recipe_title}}
+        {{recipes.category_name}}
+        {{recipes.cuisine_type}}
+        {{recipes.recipe_description}}
+        {{recipes.ingredients}}
+        {{recipes.prep_time}}
+        {{recipes.cook_time}}
+        {{recipes.total_time}}
+        {{recipes.serving}}
+    {% endfor %}
+
+    <ul class="collapsible">
+        <li>
+            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+        <li>
+            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+    </ul>
+
+{% endblock %}
