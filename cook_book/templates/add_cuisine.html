@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container addcuisine_container "> 
+<h2>Add New Cuisine</h2>
+<div class="row addcuisinepage">
+	<form action="{{ url_for('insertcuisine', cuisine_id = cuisine._id) }}" method="POST" class="col-sm-12">
+
+		<div class="row add_recipe_cuis add_edit_pages_gap">
+			<div class="input-field col s12 icon">
+				<i class="material-icons prefix">collections</i>
+				<input id="cuisine_type" name="cuisine_type" type="text"
+                    class="validate">
+				<label>Cuisine Type</label>
+			</div>
+
+
+		</div>
+
+
+
+		<div class="col-sm-12 set_2_btn">
+			<button class="btn   light-blue darken-4 waves-effect waves-light btn_add_cuisine" type="submit" name="action">Add Cuisine
+                    <i class="material-icons right">send</i>
+                </button>
+			<a href="#" class="waves-effect waves-light btn deep-orange darken-3 cancel_button">
+				<i class="material-icons right">cancel</i>Cancel
+			</a>
+		</div>
+
+
+	</form>
+</div>
+</div>
+
+{% endblock %}

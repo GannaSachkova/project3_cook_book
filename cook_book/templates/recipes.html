@@ -1,30 +1,71 @@
-{% extends 'base.html' %}
-{% block content %}
-    {% for rec in recipes %}
-        {{recipes.recipe_title}}
-        {{recipes.category_name}}
-        {{recipes.cuisine_type}}
-        {{recipes.recipe_description}}
-        {{recipes.ingredients}}
-        {{recipes.prep_time}}
-        {{recipes.cook_time}}
-        {{recipes.total_time}}
-        {{recipes.serving}}
-    {% endfor %}
+{% extends 'base.html' %} {% block content %}
 
-    <ul class="collapsible">
-        <li>
-            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-    </ul>
 
+<div class="all_recipes_container ">
+
+	<h2>View all</h2>
+
+
+	<div class="row">
+		<div class="allrecipes_addbutton col s12">
+			<a href="{{url_for('addrecipe')}}"
+				class="waves-effect waves-light btn light-blue darken-4 btn_add right"><i class="material-icons left">add</i>Add
+				Recipe</a>
+		</div>
+	</div>
+
+
+
+	<div class="row_recipes">
+		<ul class="collapsible collapsible_container">
+			{% for recipe in recipes %}
+			<li>
+				<div class="row collapsible-header">
+					<div class="col s12 m10 recipe_header left ">
+						<i class="material-icons  ">expand_more</i>
+						<strong>{{recipe.recipe_title}}</strong> -
+						{{recipe.category_name}} - {{recipe.cuisine_type}} - &nbsp;Cook time:
+						<em>{{recipe.cook_time}}</em>
+					</div>
+
+					<div class="col s12 m2 right recipespage_btn">
+						<a href="{{url_for('recipemainpage', recipe_id=recipe._id)}}"
+							class="btn light-blue darken-1 btn_view waves-effect waves-light btn-small btn_edit_view recipespage_btn"
+							type="submit">
+							<i class="material-icons ">visibility</i>
+							<a href="{{url_for('editrecipe', recipe_id=recipe._id)}}"
+								class="waves-effect waves-light btn yellow  lighten-2 btn_edit_view btn-small recipespage_btn"><i class="material-icons ">edit</i></a>
+
+							<a href="{{url_for('deleterecipe', recipe_id=recipe._id)}}"
+								class="waves-effect waves-light btn deep-orange darken-3 btn_edit_view btn-small recipespage_btn"><i class="material-icons">delete_forever</i></a>
+					</div>
+
+
+
+					<div class="collapsible-body ">
+
+						<ul class="collapsible" data-collapsible="expandable">
+							<li>
+								<div class="collapsible-header">
+									<i class="material-icons">local_grocery_store</i>Ingredients
+								</div>
+								<div class="collapsible-body "><span>{{recipe.ingredients}}</span></div>
+							</li>
+							<li>
+								<div class="collapsible-header">
+									<i class="material-icons">format_list_numbered</i>Direction
+								</div>
+								<div class="collapsible-body"><span>{{recipe.recipe_description}}</span></div>
+							</li>
+
+						</ul>
+
+					</div>
+
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+
+</div>
 {% endblock %}

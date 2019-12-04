@@ -1,0 +1,386 @@
+* {
+    margin: 0px;
+    padding: 0px;
+   box-sizing: border-box;
+}
+
+html,body{
+   font-family:  "Roboto","Helvetica Neue", "Arial","Noto Sans",sans-serif;
+     background-color: #F4F7F5;
+     height: 100%;
+}
+
+.row, .col{
+     margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.btn{
+line-height: unset;
+padding: 5px 1rem;
+color: #F4F7F5;
+
+}.btn:hover, a:hover{
+    color:  #F4F7F5;
+}
+
+h2, h4{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.btn, a {
+color: #F4F7F5;
+}
+
+.btn i{
+    line-height: normal;
+}
+
+
+.btn_add_cuisine, cancel_button{
+    margin-right: 15px;
+}
+
+.btn.btn_add_recipe, .btn.btn_edit_recipe, .btn_edit, .btn.btn_add_cuisine, .btn.cancel_button, .btn.btn_find, .btn.btn_delete, .btn_edit.deleteEdit, .btn_delete.deleteEdit, .btn_edit_view, .go_back_to_search{
+    margin: 10px 15px 15px 0px;
+   
+}
+
+.recipespage_btn{
+    display: inline-block;
+}
+
+.add-recipe-title,  .add_recipe_cuis, .add-recipe-dir, .add-recipe-tot_serv {
+  background: rgba(121, 123, 128, 0.05);
+  border-radius:2px;
+  border-bottom-color: rgba(121, 123, 128, 0.05);
+  padding:10px 0px;
+  margin: 15px;
+}
+
+.add-recipe-category, .add-recipe-ingredients, .add-recipe-prep_cook {
+  background: rgba(110, 94, 12, 0.2);
+  border-radius:2px;
+   border-bottom-color: rgba(110, 94, 12, 0.2);;
+  padding:10px 10px 20px;
+  margin: 15px;
+}
+
+
+
+
+/*   BASE PAGE   */
+
+nav .brand-logo {
+    margin-left: 10px;
+    color: #F4F7F5;
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: capitalize; 
+}
+
+nav ul a {
+    font-size:25px;
+    font-weight: 400;
+}
+
+
+/*   INDEX PAGE   */
+.brandlogoimg{
+    padding-top: 6px;
+    margin-left: 10px;
+    width: 60px;
+   height: auto;
+   overflow: auto;
+}
+
+.nav-img{
+    display: flex;
+  align-items: center;
+ margin: 0 auto;
+}
+
+.container-fluid{
+    margin:0;
+    padding: 0;
+    width: 100%;
+}
+
+
+.container{
+    width: 100%; 
+    padding-right: 15px; 
+    padding-left: 15px; 
+     margin-right: auto;
+    margin-left: auto;
+}
+/* i.material-icons{
+
+} */
+.collapsible-header i{
+    margin-right: 0;
+}
+.homepage-container {
+    height: 74vh;
+    background-size: cover;
+    background-position: center;
+    background-color: #F4F7F5;
+    background-image: url(https://cdn.pixabay.com/photo/2017/09/16/19/21/salad-2756467_960_720.jpg); 
+}
+
+.homepage-container {
+    text-align: center;
+    justify-content: center!important;
+}
+
+.justify-content-center{
+    justify-content: center!important;
+}
+
+.jumbotron.col.s12{
+    margin: 150px 0 80px;
+    height: auto;
+    justify-content: center;
+    align-items:center; 
+    background-color: #F4F7F5;
+    border-radius:  20px;
+    padding: 10px;
+}
+
+
+.jumbotron h3 { 
+  text-align: center; 
+  font-weight: 600;
+
+}
+.jumbotron-font{
+    font-family: 'Calistoga', cursive;
+}
+
+h3.h3-jumbotron{
+   font-weight: 300;
+   margin:0;
+   padding: 10px 15px;
+
+}
+
+.index_buttons{
+    padding: 10px 15px;
+    margin: 15px 0px;
+    font-size: 18px;
+    display: inline;
+}
+.row_index_buttons{
+    margin-top: 30px;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+}
+
+.add_edit_pages_gap{
+    margin-bottom:20px;
+}
+
+
+/* ADD CUISINE */
+.container.addcuisine_container, .container.all_recipes_container, .container.find_container, .container.edit_cuisine_container {
+    width: 100%;
+    height: 72vh;
+}
+/* SEARCH PEAGE */
+.go_back_to_search, .btn_find, .go_back_to_home{
+    margin: 150px 50px 0 0;
+}
+
+.go_back_to_home{
+    margin: 50px 0;
+}
+.container.addcuisine_container, .container.all_recipes_container{
+    width: 100%;
+    height: 72vh;
+}
+
+/* THANKS PAGES  */
+
+.thanks_container{
+    width: 100%;
+    height: 70vh;
+}
+
+ .btn_thanks{
+    margin-top: 200px;
+    margin-right: 200px;
+} 
+
+
+/* ADD/EDIT RECIPE PAGE */
+
+.row_recipes{
+width: 100%;
+}
+
+.add_new_ingredient, .add_next_step, .add_cuisine {
+margin-top:10px;
+color:#4B433E;
+} 
+
+.add_new_ingredient:hover, .add_next_step:hover, .add_cuisine:hover {
+margin-top:10px;
+color:#4B433E;
+}
+.label{
+margin-top: 10px;
+margin-bottom: 10px;
+} 
+
+.selectfiels{
+    margin-top: 10px;
+}
+
+
+::placeholder {
+    color: rgb(112, 110, 110);
+}
+
+:-ms-input-placeholder{
+    color: rgb(112, 110, 110);
+}
+
+::-webkit-input-placeholder { 
+  color: rgb(112, 110, 110);
+}
+.i_add_icon{
+    /* margin-top: 5px; */
+    padding-left: 5px;
+}
+
+/* RECIPES */
+.collapsible_container{
+    width: 100%;
+    height: auto;
+}
+
+.collapsible-header{
+margin-bottom: 10px;
+padding: 10px; 
+}
+
+.btn_edit_view{
+margin-right: 10px;
+}
+
+
+
+/* MAIN RECIPE PAGE */
+.recipe-details {
+  background:#E4F7D2;
+  padding: 15px 10px;
+  border-radius: 2px;
+  color:#4B433E;
+   margin-left: 65px; 
+   margin-right:65px;
+   margin-bottom:  7px;
+}
+.icons_main_recipe{
+color:  #41493A; 
+
+}
+ol{
+    display: flex;
+    flex-direction: column;
+justify-content: center;
+    align-items:center;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+span .i_icon_text{
+    font-style: italic;
+    font-weight: 300;
+}
+
+/* FOOTER */
+
+.footer_btn_links1{
+padding-right: 0;
+}
+
+.links-footer{
+    padding-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.footer1_header1{
+    margin-left: 15px;
+}
+
+.footer2{
+    margin-left: 15px;
+}
+
+.hr-footer{
+border-color: darkgrey;
+   background-color:  darkgrey;
+   color: darkgrey;
+}
+footer p {
+    margin-top: 10px;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 413px){
+
+.container{
+    padding-right: 25px; 
+    padding-left: 25px; 
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+.index_buttons{
+    padding: 10px;
+}
+
+
+.jumbotron.col.s12 {
+    margin: 50px 0 20px;    
+}
+
+h3{
+    font-size: 30px;
+}
+
+.h3-jumbotron{
+    font-weight: 200;
+}
+
+.footer1__header1, .footer1_header2, .footer_btn_links1, footer p{
+    text-align: center;
+}
+.footer-copyright{
+     justify-content: center; 
+    margin: 0;
+}
+.right {
+     float: none;
+}
+.recipe-header{
+    font-size: 24px;
+}
+.btn_thanks {
+    margin-top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.btn.cancel_button1, .btn.btn_add_recipe1{
+    margin: 0 10px 10px 0;
+}
+}
+
+

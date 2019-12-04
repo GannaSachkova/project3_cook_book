@@ -6,22 +6,116 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Cook Book</title>
+
+
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<!-- Materialize -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/png" href="{{url_for('static', filename='images/img-cookbook.jpg')}}" />
+	<!-- css -->
+	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
 </head>
 
+
+
 <body>
-	<h1>Outside!</h1>
 
-	{% block content %}
+	<header>
 
-	{% endblock %}
+
+
+
+
+		<!-- NAVBAR -->
+		<nav>
+			 <div class="nav-wrapper light-green darken-3">
+				<!-- <div class="nav-img"> -->
+					<img id="brandlogo" class="brandlogoimg hide-on-med-and-down" src="{{url_for('static', filename='images/img-cookbook.jpg')}}">
+                <!-- </div> -->
+               
+					<a href="{{ url_for('index') }}" class="brand-logo">Cook Book</a>
+					<a href="#" data-activates="mobile-demo"
+						class="button-collapse "><i class="material-icons ">menu</i></a>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="{{ url_for('index') }}">Home</a></li>
+						<li><a href="{{ url_for('addrecipe') }}">Add Recipe</a></li>
+						<li><a href="{{ url_for('findrecipe') }}">Find Recipe</a></li>
+						<li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
+					</ul>
+					<ul class="side-nav" id="mobile-demo">
+						<li><a href="{{ url_for('index') }}">Home</a></li>
+						<li><a href="{{ url_for('addrecipe') }}">Add Recipe</a></li>
+						<li><a href="{{ url_for('findrecipe') }}">Find Recipe</a></li>
+						<li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
+					</ul>
+				</div>
+		</nav>
+	</header>
+	<!-- NAVBAR END -->
+
+	<div class="container-fluid">
+		{% block content %} {% endblock %}
+	</div>
+
+
+	<!-- FOOTER-->
+
+	<footer class="page-footer light-green darken-3 text-left sticky-bottom w-100">
+
+		<div class="row">
+			<div class="col s12 m6 ">
+				<h5 class="white-text footer1__header1">About Cook Book</h5>
+				<hr class="hr-footer" />
+				<p class="grey-text text-lighten-4">Cook Book Manager is a recipe-organizer available for
+					everyone.
+					It allows you to collect, search and organize your recipes. </p>
+			</div>
+			<div class="col s12 m6  footer_header2">
+				<h5 class="white-text footer1_header2">More information about us</h5>
+				<hr class="hr-footer" />
+
+				<div class="footer_btn_links">
+					<div class="col s12 footer_btn_links1">
+						<a href="https://www.facebook.com/"
+							target="_blank"><img src="/static/images/icon-facebook.png" class="links-footer" alt="Facebook"></a>
+							<a href="https://www.instagram.com/"
+								target="_blank"><img src="/static/images/icon-instagram.png" class="links-footer" alt="Instagram"></a>
+								<a href="https://www.twitter.com/"
+									target="_blank"><img src="/static/images/icon-twitter.png" class="links-footer" alt="Twitter"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-copyright">
+
+			<p class="footer2">© 2019 Ganna Sachkova - Project-3 for Code Institute</p>
+
+		</div>
+	</footer>
+
+	<!-- FOOTER END-->
+
+
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	<script type="text/javascript">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script type="text/javascript" src="{{url_for('static', filename='js/main.js')}}"></script>
+
+
+
+
+	<script>
 		$(document).ready(function() {
-            $('.collapsible').collapsible();
-        })
+                $('.collapsible').collapsible();
+                $('select').material_select();
+                $(".button-collapse").sideNav();
+                $('.modal').modal();
+	})
+	</script>
 
 </body>
 
