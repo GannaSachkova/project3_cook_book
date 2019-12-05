@@ -9,7 +9,7 @@ Demo
 -----------------------------------------
 
 
-A live demo of the website you can be found [here](https://gannasachkova.github.io/project3_cook_book/)
+A live demo of the website you can be found [here](https://git.heroku.com/cook-book-project3.git)
 
 
 UX
@@ -102,7 +102,7 @@ Deployment
 ----------------------------------------
 Deployment and source control was carried out via GitHub and Heroku. The repository location is as follows: [https://github.com/GannaSachkova/project3_cook_book](https://github.com/GannaSachkova/project3_cook_book)
 
-Heroku App Location is as follows[ https://cook-book-project3.herokuapp.com/] (https://cook-book-project3.herokuapp.com/)
+Heroku App Location is as follows[https://cook-book-project3.herokuapp.com/] (https://cook-book-project3.herokuapp.com/)
 
 
 Credits
@@ -115,7 +115,7 @@ Credits
 
 + Some of the page elements (e.g. navbar, footer..etc) has been taken from [Materialize] (http://archives.materializecss.com/0.100.2/).
 
-+ Some of the recipes has been copied from {BBC FOOD]( https://www.bbc.com/food/recipes)
++ Some of the recipes has been copied from [BBC_Food] (https://www.bbc.com/food/recipes)
 
 
 **Acknowledgements**
