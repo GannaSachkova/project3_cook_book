@@ -2,14 +2,14 @@ Code Institute Cook Book
 ======================================
 
 
-**This project is designed as a platform on which to demonstrate my data centric development skills. **
+**This project is designed as a platform on which to demonstrate my data centric development skills.**
 
 
 Demo
 -----------------------------------------
 
 
-A live demo of the website you can be found [here](https://milestone-project-three.herokuapp.com/)
+A live demo of the website you can be found [here](https://gannasachkova.github.io/project3_cook_book/)
 
 
 UX
@@ -42,7 +42,7 @@ Recipes are displayed on "All Recipes" page. Recipies are displayed as an accord
 Recipes are displayed as an accordion list. When initially viewed this list will show each recipe by its name, category, cuisine type, total time, preparation time and cook time. Upon clicking a recipe this opens the accordion to reveal a new accordion list with "ingredients" and "description" as the 2 list items. These new accordions can then be expanded to display their content. 
 
 ####  Future Features
-*	**Images **– I would like to add them to the each main recipe page. 
+*	**Images**– I would like to add them to the each main recipe page. 
 *	**Comments** - to allow users to leave a detailed comment about a recipe.
 *	**User log Up / Log In** - I would like to add it to the web site later. I suppose it is important part for each website to secure private information. 
 *	**Share links** -I would like to add share functionality so people can share thier favourite recipes via social media/email etc.  
@@ -80,16 +80,16 @@ Go to the "Add Recipe" page and try to submit a recipe with one or more of the i
 **2 - Edit recipe**
 Go to the "Edit Recipe" page to edit recipe form or leave it without any changes.  Then click the button “Update Recipe” if you finished. Or click on the “Cancel” button to keep going to do necessaries changes. The original recipe will be updated with included the changes. 
 
-**3 - View Recipe
+**3 - View Recipe** To view and  familiarize yourself with the recipe: with necessaries ingredients an directions to cook - go to "All Recipes" page and click the "View" button that redirect you to the recipe page.
 
-**4 - Delete recipe **
+**4 - Delete recipe**
 To find a recipe that you would like to delete: go to "All Recipes" page and click the "Delete" button.  The recipe will be no longer show as it has been removed from the database. 
 
 
 **5 - Add cuisine type**
 Click the "Add a New Cuisine" button on the “Add Recipe” page. You will redirect on a new page “Add a New Cuisine”, where you can add the new cuisine. To confirm it - click on “Add Cuisine” button and the new cuisine type will be added to the database. Also, it appears in all “All Cuisine Type” dropdown menus across the website.
 
-**6 – Edit cuisine type **
+**6 – Edit cuisine type**
 To find cuisine type that you would like to delete: go on the "All Recipes". Then click the “Edit” button and you will redirect to the “Edit Recipe” page. There you need to find and click a button “View all Cuisines. The page “Cuisines” will be open. There you need to find cuisine type that you would like to edit or delete. 
 If you select the option “Delete” – the selected cuisine will be no longer show on the page because it will be permanently removed from the database and all related dropdown menus across the website.
 If you select the button with “Edit” icon – it sends you to a new page “Edit Cuisine”, where you can edit cuisine type and click onto the “Update cuisine” button. It will be updated with included changes.
@@ -100,9 +100,9 @@ Go to the "Find Recipe" page and select a filtering parameter then click the but
 
 Deployment
 ----------------------------------------
-Deployment and source control was carried out via GitHub and Heroku. The repository location is as follows: [https://github.com/deevdz/milestone-project-3]( https://github.com/deevdz/milestone-project-3)
+Deployment and source control was carried out via GitHub and Heroku. The repository location is as follows: [https://github.com/GannaSachkova/project3_cook_book](https://github.com/GannaSachkova/project3_cook_book)
 
-Heroku App Location is as follows[ https://deevdz-milestone-3.herokuapp.com/] (https://deevdz-milestone-3.herokuapp.com/)
+Heroku App Location is as follows[ https://cook-book-project3.herokuapp.com/] (https://cook-book-project3.herokuapp.com/)
 
 
 Credits
