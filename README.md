@@ -9,7 +9,7 @@ Demo
 -----------------------------------------
 
 
-A live demo of the website you can be found [here](https://gannasachkova.github.io/project3_cook_book/)
+A live demo of the website you can be found [here](https://cook-book-project3.herokuapp.com/)
 
 
 UX
