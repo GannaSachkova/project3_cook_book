@@ -6,28 +6,23 @@ from bson.objectid import ObjectId
 
 
 
+
+
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = 'cook_book'
 
-
-#app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 app.config["MONGO_URI"] = os.getenv(
     'MONGO_URI', 'mongodb+srv://dorogaya:Ganna1810@cluster0-1ulil.mongodb.net/cook_book?retryWrites=true&w=majority')
 
-
 mongo = PyMongo(app)
-
 
 @app.route('/')
 @app.route('/index')
 def index():
     return render_template("index.html")
 
-
-#   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #
 # Recipes
-
 
 @app.route('/get_recipes')
 def get_recipes():
@@ -39,13 +34,9 @@ def addrecipe():
     return render_template('add_recipe.html', categories=mongo.db.categories.find(), cuisine=mongo.db.cuisine_type.find())
 
 
-
-
 @app.route('/insertrecipe', methods=['POST'])
 def insertrecipe():
     recipes = mongo.db.recipes
-    # recipes.insert_one(request.form.to_dict())
-    
     the_whole_recipe = {
                 'recipe_title': request.form.get('recipe_title'),
                 'category_name': request.form.get('category_name'),
@@ -57,10 +48,9 @@ def insertrecipe():
                 'total_time': request.form.get('total_time'),
                 'serving':  request.form.get('serving')
         }
-
-    recipes.insert_one(the_whole_recipe)
-    return render_template("thanks_add_recipe.html")
-
+    post_id = recipes.insert_one(the_whole_recipe).inserted_id
+    the_recipe = recipes.find_one({"_id": ObjectId(post_id)})
+    return render_template('recipe_main.html', recipe=the_recipe)
 
 
 @app.route('/editrecipe/<recipe_id>')
@@ -74,7 +64,7 @@ def editrecipe(recipe_id):
 @app.route('/updaterecipe/<recipe_id>', methods=["POST"])
 def updaterecipe(recipe_id):
     recipes = mongo.db.recipes
-    # recipes.update_one({'_id': ObjectId(recipe_id)},
+    
     recipes.update({'_id': ObjectId(recipe_id)},
                        {"$set": {
                            'recipe_title': request.form.get('recipe_title'),
@@ -87,7 +77,9 @@ def updaterecipe(recipe_id):
                            'total_time': request.form.get('total_time'),
                            'serving': request.form.get('serving')
                        }})
-    return render_template("thanks_update_recipe.html")
+    the_recipe =recipes.find_one({"_id": ObjectId(recipe_id)})
+          
+    return render_template('recipe_main.html', recipe=the_recipe)
 
 
 
@@ -193,7 +185,6 @@ def filterrecipes():
     return render_template("results.html", results_category_name=results_category_name, results_cuisine_type=results_cuisine_type)
 
 #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #
-
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))

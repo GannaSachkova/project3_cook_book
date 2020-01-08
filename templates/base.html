@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- Favicon -->
 	<link rel="shortcut icon" type="image/png" href="{{url_for('static', filename='images/img-cookbook.jpg')}}" />
-	<!-- css -->
+   	<!-- css -->
 	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
 </head>
 
@@ -31,27 +31,27 @@
 
 		<!-- NAVBAR -->
 		<nav>
-			 <div class="nav-wrapper light-green darken-3">
+			<div class="nav-wrapper light-green darken-3">
 				<!-- <div class="nav-img"> -->
-					<img id="brandlogo" class="brandlogoimg hide-on-med-and-down" src="{{url_for('static', filename='images/img-cookbook.jpg')}}">
-                <!-- </div> -->
-               
-					<a href="{{ url_for('index') }}" class="brand-logo">Cook Book</a>
-					<a href="#" data-activates="mobile-demo"
-						class="button-collapse "><i class="material-icons ">menu</i></a>
-					<ul class="right hide-on-med-and-down">
-						<li><a href="{{ url_for('index') }}">Home</a></li>
-						<li><a href="{{ url_for('addrecipe') }}">Add Recipe</a></li>
-						<li><a href="{{ url_for('findrecipe') }}">Find Recipe</a></li>
-						<li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
-					</ul>
-					<ul class="side-nav" id="mobile-demo">
-						<li><a href="{{ url_for('index') }}">Home</a></li>
-						<li><a href="{{ url_for('addrecipe') }}">Add Recipe</a></li>
-						<li><a href="{{ url_for('findrecipe') }}">Find Recipe</a></li>
-						<li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
-					</ul>
-				</div>
+				<img id="brandlogo" class="brandlogoimg hide-on-med-and-down" src="{{url_for('static', filename='images/img-cookbook.jpg')}}" alt="logo">
+				<!-- </div> -->
+
+				<a href="{{ url_for('index') }}" class="brand-logo">Cook Book</a>
+				<a href="#" data-activates="mobile-demo"
+					class="button-collapse "><i class="material-icons ">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="{{ url_for('index') }}">Home</a></li>
+					<li><a href="{{ url_for('addrecipe') }}">Add Recipe</a></li>
+					<li><a href="{{ url_for('findrecipe') }}">Find Recipe</a></li>
+					<li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
+				</ul>
+				<ul class="side-nav" id="mobile-demo">
+					<li><a href="{{ url_for('index') }}">Home</a></li>
+					<li><a href="{{ url_for('addrecipe') }}">Add Recipe</a></li>
+					<li><a href="{{ url_for('findrecipe') }}">Find Recipe</a></li>
+					<li><a href="{{ url_for('get_recipes') }}">All Recipes</a></li>
+				</ul>
+			</div>
 		</nav>
 	</header>
 	<!-- NAVBAR END -->
@@ -103,8 +103,7 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<script type="text/javascript" src="{{url_for('static', filename='js/main.js')}}"></script>
-
+	<script src="{{url_for('static', filename='js/main.js')}}"></script>
 
 
 

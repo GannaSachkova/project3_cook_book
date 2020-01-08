@@ -1,31 +1,35 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container edit_cuisine_container">
-<h3>Edit Cuisine</h3>
-<div class="row">
-    <form action="{{ url_for('updatecuisine', cuisine_id=cuisine._id) }}" method="POST" class="col s12">
-        
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">collections</i>
-                <input id="cuisine_type" name="cuisine_type"  type="text" class="validate" value="{{cuisine.cuisine_type}}"required>
-                <label for="icon_telephone">Cuisine Type</label>
-            </div>
-            
-        </div>
-        <div class="row">
-            <button class="btn   light-blue darken-4 waves-effect waves-light btn_edit_recipe" type="submit" name="action">Update Cusine
+<div class="edit_cuisine_container">
+
+	<div class="h3">
+		<h3 class="heading_shadow">Edit Cuisine</h3>
+	</div>
+	<div class="row">
+		<form action="{{ url_for('updatecuisine', cuisine_id=cuisine._id) }}" method="POST" class=" col s6 offset-s3">
+
+			<div class="row edit_recipe_cuis">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">collections</i>
+					<input id="cuisine_type" name="cuisine_type"  type="text" class="validate" value="{{cuisine.cuisine_type}}" required>
+					<label>Cuisine Type</label>
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="col s12">
+					<button class="btn   light-blue darken-4 waves-effect waves-light btn_edit_recipe" type="submit" name="action">Update Cusine
                             <i class="material-icons right">send</i>
                         </button>
-            <a href="#" class="waves-effect waves-light btn deep-orange darken-3 cancel_button">
-                            <i class="material-icons right">cancel</i>Cancel
-                        </a>
-        </div>
+					<a href="{{ url_for('get_cuisines')}}" class="waves-effect waves-light btn deep-orange darken-3 cancel_button">
+						<i class="material-icons right">cancel</i>Cancel
+					</a>
+				</div>
+			</div>
 
-        
-        
-    </form>
+
+		</form>
+	</div>
 </div>
-
 
 
 {% endblock %}

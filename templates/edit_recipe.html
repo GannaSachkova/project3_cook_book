@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container edit_Recipe_page">
-	<h2>Edit Recipe</h2>
+<div class="edit_Recipe_page">
 
+<div class="h2">
+	<h2 class="heading_shadow">Edit Recipe</h2>
+</div>
 	<div class="row">
-		<form action="{{ url_for('updaterecipe', recipe_id=recipe._id) }}" method="POST" class="col s12 ">
+		<form action="{{ url_for('updaterecipe', recipe_id=recipe._id) }}" method="POST" class="col s12 m10 offset-m1">
 			<div class="row add-recipe-title add_edit_pages_gap">
 				<div class="input-field col s12">
 					<i class="material-icons prefix">assignment</i>
@@ -27,7 +29,7 @@
                         {% endif %}
                         {% endfor %}
                     </select>
-					<label class="label">Category</label>
+					<label>Category</label>
 				</div>
 			</div>
 
@@ -47,7 +49,7 @@
                         {% endif %}   
                     {% endfor %}
                     </select>
-					<label class="label">Cuisine Type</label>
+					<label >Cuisine Type</label>
 				</div>
 
 
@@ -60,16 +62,16 @@
 
 
 			<div class="row add-recipe-ingredients add_edit_pages_gap">
-				<div class="input-field col s12 m6" id="ingredients">
+				<div class="input-field col s12 m6" id="ingredients3">
 					<i class="material-icons prefix">menu</i>
 					{% for item in recipe.ingredients %}
 					{% if item == recipe.ingredients[0] %}
-					<input required placeholder="1 cup Flour" id="ingredients" name="ingredients" type="text" value="{{item}}" class="validate">
-					<label class="label">Ingredients</label>
+					<input required placeholder="1 cup Flour" id="ingredients4" name="ingredients" type="text" value="{{item}}" class="validate">
+					<label>Ingredients</label>
 					{% else %}
 					<div class="new-ingredient">
-						<div class="input-field col s11">
-							<input type="text" name="ingredients" id="ingredients" class="validate" value="{{item}}" required>
+						<div class="input-field col s9">
+							<input type="text" name="ingredients5" id="ingredients" class="validate" value="{{item}}" required>
                                 </div>
 							<div class="col s1">
 								<a class="btn-floating waves-effect waves-light"
@@ -92,19 +94,19 @@
 
 
 				<div class="row add-recipe-dir add_edit_pages_gap">
-					<div class="input-field col s12 m6" id="recipe_description1">
+					<div class="input-field col s12 m6" id="recipe_description3">
 
 						<i class="material-icons prefix">menu_book</i>
 						<i class="material-icons prefix">menu_book</i>
 						{% for item in recipe.ingredients %}
 						{% if item == recipe.recipe_description[0] %}
-						<input required placeholder="Preheat oven..." id="recipe_description" name="recipe_description" type="text" value="{{item}}" class="validate">
-						<label class="label">Directions</label>
+						<input required placeholder="Preheat oven..." id="recipe_description2" name="recipe_description2" type="text" value="{{item}}" class="validate">
+						<label>Directions</label>
 
 						{% else %}
 						<div class="next-step">
-							<div class="input-field col s11">
-								<input type="text" name="recipe_description" id="recipe_description" class="validate" value="{{item}}" required>
+							<div class="input-field col s9">
+								<input type="text" name="recipe_description4" id="recipe_description4" class="validate" value="{{item}}" required>
                                 </div>
 								<div class="col s1">
 									<a class="btn-floating waves-effect waves-light"
@@ -131,7 +133,7 @@
 							<i class="material-icons prefix">access_time</i>
 							<input id="prep_time" name="prep_time" type="text"
                     class="validate" value="{{recipe.prep_time}}">
-							<label class="label">Preparation Time</label>
+							<label>Preparation Time (mins)</label>
 						</div>
 
 
@@ -140,7 +142,7 @@
 							<i class="material-icons prefix">access_alarms</i>
 							<input id="cook_time" name="cook_time" type="text"
                     class="validate" value="{{recipe.cook_time}}">
-							<label class="label">Cooking Time</label>
+							<label>Cooking Time (mins)</label>
 
 						</div>
 					</div>
@@ -152,13 +154,13 @@
 							<i class="material-icons prefix">add_alarm</i>
 							<input id="total_time" name="total_time" type="text"
                     class="validate" value="{{recipe.total_time}}" >
-							<label class="label">Total Time</label>
+							<label>Total Time (mins)</label>
 						</div>
 
 						<div class="input-field col s12 m6 add_edit_pages_gap">
 							<i class="material-icons prefix">people</i>
-							<input id="serving" name="serving" type="text" class="validate" value="{{recipe.serving}}" >
-							<label class="label">Serving</label>
+							<input id="serving" name="serving" type="text" class="validate" value="{{recipe.serving}}" > 
+							<label>Serving</label>
 						</div>
 
 					</div>
@@ -167,16 +169,15 @@
 
 
 					<div class="row ">
-						<div class="col s12 m6 ">
-							<button class="btn light-blue darken-4 waves-effect waves-light  btn_add_recipe btn_add_recipe1" type="submit" name="action">Update Recipe
-                                 <i class="material-icons right">add</i>
-                            </button>
-							<a href="#"
-								class="btn waves-effect waves-light  deep-orange darken-3 cancel_button cancel_button1">
-								<i class="material-icons right">cancel</i>Cancel
-							</a>
-						</div>
-					</div>
+				<div class="col s12">
+					<button class="btn light-blue darken-4 waves-effect waves-light  btn_add_recipe" type="submit" name="action">Update Recipe
+                <i class="material-icons right">send</i>
+            </button>
+					<a href="{{url_for('recipemainpage', recipe_id=recipe._id)}}" class="btn waves-effect waves-light  deep-orange darken-3 cancel_button">
+						<i class="material-icons right">cancel</i>Cancel
+					</a>
+				</div>
+			</div>
 
 
 

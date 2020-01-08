@@ -9,7 +9,7 @@ Demo
 -----------------------------------------
 
 
-A live demo of the website you can be found [here] (https://cook-book-project3.herokuapp.com/)
+A live demo of the website you can be found [here](https://cook-book-project3.herokuapp.com/)
 
 
 UX
@@ -89,12 +89,12 @@ To find a recipe that you would like to delete: go to "All Recipes" page and cli
 **5 - Add cuisine type**
 Click the "Add a New Cuisine" button on the “Add Recipe” page. You will redirect on a new page “Add a New Cuisine”, where you can add the new cuisine. To confirm it - click on “Add Cuisine” button and the new cuisine type will be added to the database. Also, it appears in all “All Cuisine Type” dropdown menus across the website.
 
-**6 – Edit cuisine type**
+**6 - Edit cuisine type**
 To find cuisine type that you would like to delete: go on the "All Recipes". Then click the “Edit” button and you will redirect to the “Edit Recipe” page. There you need to find and click a button “View all Cuisines. The page “Cuisines” will be open. There you need to find cuisine type that you would like to edit or delete. 
 If you select the option “Delete” – the selected cuisine will be no longer show on the page because it will be permanently removed from the database and all related dropdown menus across the website.
 If you select the button with “Edit” icon – it sends you to a new page “Edit Cuisine”, where you can edit cuisine type and click onto the “Update cuisine” button. It will be updated with included changes.
 
-**6 - Find recipe** 
+**7 - Find recipe** 
 Go to the "Find Recipe" page and select a filtering parameter then click the button “Find recipe”. It will show a list of results for each chosen parameter. If no matched results – will show a blank page with a "back to search" button.
 
 
@@ -102,7 +102,7 @@ Deployment
 ----------------------------------------
 Deployment and source control was carried out via GitHub and Heroku. The repository location is as follows: [https://github.com/GannaSachkova/project3_cook_book](https://github.com/GannaSachkova/project3_cook_book)
 
-Heroku App Location is as follows[https://cook-book-project3.herokuapp.com/] (https://cook-book-project3.herokuapp.com/)
+Heroku App Location is as follows: [https://cook-book-project3.herokuapp.com/](https://cook-book-project3.herokuapp.com/)
 
 
 Credits
@@ -113,9 +113,9 @@ Credits
 
 + Background image of main page was taken from internet.
 
-+ Some of the page elements (e.g. navbar, footer..etc) has been taken from [Materialize] (http://archives.materializecss.com/0.100.2/).
++ Some of the page elements (e.g. navbar, footer..etc) has been taken from [Materialize](http://archives.materializecss.com/0.100.2/).
 
-+ Some of the recipes has been copied from [BBC_Food] (https://www.bbc.com/food/recipes)
++ Some of the recipes has been copied from [BBC_Food](https://www.bbc.com/food/recipes)
 
 
 **Acknowledgements**
