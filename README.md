@@ -71,8 +71,21 @@ Testing
 -----------------------------------------
 
 ## Testing
+Resources & Tools Used for Testing
 
-There was no automated testing used for this project. Each function has been tested thoroughly manually. There are 6 main functions across the website.
+* HTML [W3 HTML Validator](https://validator.w3.org/)
+
+* CSS  [W3 CSS Validator](https://jigsaw.w3.org/css-validator/)
+
+* online Beautifier [freeformatter.com](https://www.freeformatter.com) and [CSS Formatter](https://www.cleancss.com)
+
+The application was build using Google Chrome.
+
+This project was tested for responsiveness using the Chrome Developer Tools.
+
+
+
+There are 6 main functions across the application.
 
 **1 - Add recipe**
 Go to the "Add Recipe" page and try to submit a recipe with one or more of the incompleted fields - the form will not submit and an error message will display on the screen showing the user which fields require revisiting.

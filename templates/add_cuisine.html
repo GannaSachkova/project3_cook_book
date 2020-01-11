@@ -1,38 +1,33 @@
 {% extends 'base.html' %} {% block content %}
 <div class="addcuisine_container ">
 
-<div class="h2">
-<h2 class="heading_shadow" >Add New Cuisine</h2>
-</div>
+    <div class="h2">
+        <h2 class="heading_shadow">Add New Cuisine</h2>
+    </div>
 
-<div class="row">
-	<form action="{{ url_for('insertcuisine', cuisine_id = cuisine._id) }}" method="POST" class="col s12 m6 offset-m3">
+    <div class="row">
+        <form action="{{ url_for('insertcuisine', cuisine_id = cuisine._id) }}" method="POST" class="col s12 m6 offset-m3">
 
-		<div class="row add_recipe_cuis add_edit_pages_gap">
-			<div class="input-field col s12 icon">
-				<i class="material-icons prefix">collections</i>
-				<input id="cuisine_type" name="cuisine_type" type="text"
-                    class="validate">
-				<label>Cuisine Type</label>
-			</div>
+            <div class="row add_recipe_cuis add_edit_pages_gap">
+                <div class="input-field col s12 icon">
+                    <i class="material-icons prefix">collections</i>
+                    <input id="cuisine_type" name="cuisine_type" type="text" class="validate">
+                    <label>Cuisine Type</label>
+                </div>
 
+            </div>
 
-		</div>
-
-
-
-		<div class="col s12 set_2_btn">
-			<button class="btn   light-blue darken-4 waves-effect waves-light btn_add_cuisine" type="submit" name="action">Add Cuisine
+            <div class="col s12 set_2_btn">
+                <button class="btn   light-blue darken-4 waves-effect waves-light btn_add_cuisine" type="submit" name="action">Add Cuisine
                     <i class="material-icons right">send</i>
                 </button>
-			<a href="{{ url_for('addrecipe')}}" class="waves-effect waves-light btn deep-orange darken-3 cancel_button">
-				<i class="material-icons right">cancel</i>Cancel
-			</a>
-		</div>
+                <a href="{{ url_for('addrecipe')}}" class="waves-effect waves-light btn deep-orange darken-3 cancel_button">
+                    <i class="material-icons right">cancel</i>Cancel
+                </a>
+            </div>
 
-
-	</form>
-</div>
+        </form>
+    </div>
 </div>
 
 {% endblock %}

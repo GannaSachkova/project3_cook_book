@@ -1,118 +1,107 @@
 {% extends 'base.html' %} {% block content %}
 
-
 <div class="recipe_main_container">
 
-	<div class="row ">
-		<div class="col s12 center top_btns_main_recipe">
-			<a href="{{ url_for('editrecipe', recipe_id = recipe._id) }}"
-				class="waves-effect waves-light btn btn_edit btn_edit1 light-blue darken-4"><i class="material-icons left">edit</i>Edit</a>
-			<a href="#modal3"
-				class="waves-effect waves-light btn deep-orange darken-3 cancel_button modal-trigger cancel_button1"><i class="material-icons">delete_forever</i>Delete</a>
+    <div class="row ">
+        <div class="col s12 center top_btns_main_recipe">
+            <a href="{{ url_for('editrecipe', recipe_id = recipe._id) }}" class="waves-effect waves-light btn btn_edit btn_edit1 light-blue darken-4"><i class="material-icons left">edit</i>Edit</a>
+            <a href="#modal3" class="waves-effect waves-light btn deep-orange darken-3 cancel_button modal-trigger cancel_button1"><i class="material-icons">delete_forever</i>Delete</a>
 
-			<!-- Modal Structure -->
+            <!-- Modal Structure -->
 
-			<div id="modal3" class="modal modal-fixed-footer col s10 m6">
-				<div class="modal-content">
-					<div class="row">
-						<div class="col s2 offset-s3 m2 offset-m4 l2 offset-l5">
-							<i class="material-icons warning">warning</i></div>
-					</div>
-					<h4 class="modal_head">Are you sure you want delete it?</h4>
-					<p class="modal_p">You won't be able to revert this!</p>
-				</div>
+            <div id="modal3" class="modal modal-fixed-footer col s10 m6">
+                <div class="modal-content">
+                    <div class="row">
+                        <div class="col s2 offset-s3 m2 offset-m4 l2 offset-l5">
+                            <i class="material-icons warning">warning</i></div>
+                    </div>
+                    <h4 class="modal_head">Are you sure you want delete it?</h4>
+                    <p class="modal_p">You won't be able to revert this!</p>
+                </div>
 
-				<div class="modal-footer col s12">
-					<a href="{{url_for('deleterecipe', recipe_id=recipe._id)}}"
-						class="modal-close waves-effect waves-green  btn deep-orange darken-3 btn_modal">Yes,
+                <div class="modal-footer col s12">
+                    <a href="{{url_for('deleterecipe', recipe_id=recipe._id)}}" class="modal-close waves-effect waves-green  btn deep-orange darken-3 btn_modal">Yes,
 						delete
 						it!</a>
-					<a href="#!" class="modal-close waves-effect waves-green  btn deep-green darken-3 btn_modal">No,
+                    <a href="#!" class="modal-close waves-effect waves-green  btn deep-green darken-3 btn_modal">No,
 						cancel!</a>
-				</div>
-			</div>
-		</div>
-	</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-	<div class="h2">
-		<h2 class="heading_shadow">{{recipe.recipe_title}}</h2>
-	</div>
+    <div class="h2">
+        <h2 class="heading_shadow">{{recipe.recipe_title}}</h2>
+    </div>
 
-	<div class="row main_recipe_width">
-	 <div class="col s12 m8 offset-m2">
+    <div class="row main_recipe_width">
+        <div class="col s12 m8 offset-m2">
 
-			<div class="row recipe-details">
-				<div class="col s12 m6 gap_main_recipe">
+            <div class="row recipe-details">
+                <div class="col s12 m6 gap_main_recipe">
 
-					<i class="material-icons icons_main_recipe">add_alarm</i>
-					<span style="font-size:20px;"> Time:</span>
-					<span style="font-size:20px; font-weight:bold; font-style:italic">{{recipe.total_time}}</span>
-				</div>
-				<!-- </div> -->
-				<div class="col s12 m6">
-					<i class="material-icons  icons_main_recipe">assessment</i>
-					<span style="font-size:20px;">Category:</span>
-					<span style="font-size:20px; font-weight:bold; font-style:italic"> {{recipe.category_name}}</span>
-				</div>
-			</div>
-	
+                    <i class="material-icons icons_main_recipe">add_alarm</i>
+                    <span style="font-size:20px;"> Time:</span>
+                    <span style="font-size:20px; font-weight:bold; font-style:italic">{{recipe.total_time}}</span>
+                </div>
+                <!-- </div> -->
+                <div class="col s12 m6">
+                    <i class="material-icons  icons_main_recipe">assessment</i>
+                    <span style="font-size:20px;">Category:</span>
+                    <span style="font-size:20px; font-weight:bold; font-style:italic"> {{recipe.category_name}}</span>
+                </div>
+            </div>
 
-		<div class="row recipe-details">
-			<div class="col s12 m6 gap_main_recipe">
-				<i class="material-icons icons_main_recipe">access_time</i>
-				<span style="font-size:20px;">Prep Time: </span>
-				<span style="font-size:20px;font-weight:bold; font-style:italic;">{{recipe.prep_time}}</span>
-			</div>
-			<div class="col s12 m6">
-				<i class="material-icons icons_main_recipe">collections</i>
-				<span style="font-size:20px;">Cuisine:</span>
-				<span style="font-size:20px; font-weight:bold; font-style:italic;"> {{recipe.cuisine_type}}</span>
-			</div>
-		</div>
-		<div class="row recipe-details">
-			<div class="col s12 m6">
-				<i class="material-icons icons_main_recipe">add_alarm</i>
-				<span style="font-size:20px;">Cook Time: </span>
-				<span style="font-size:20px; font-weight:bold; font-style:italic;">{{recipe.cook_time}}</span>
-			</div>
+            <div class="row recipe-details">
+                <div class="col s12 m6 gap_main_recipe">
+                    <i class="material-icons icons_main_recipe">access_time</i>
+                    <span style="font-size:20px;">Prep Time: </span>
+                    <span style="font-size:20px;font-weight:bold; font-style:italic;">{{recipe.prep_time}}</span>
+                </div>
+                <div class="col s12 m6">
+                    <i class="material-icons icons_main_recipe">collections</i>
+                    <span style="font-size:20px;">Cuisine:</span>
+                    <span style="font-size:20px; font-weight:bold; font-style:italic;"> {{recipe.cuisine_type}}</span>
+                </div>
+            </div>
+            <div class="row recipe-details">
+                <div class="col s12 m6">
+                    <i class="material-icons icons_main_recipe">add_alarm</i>
+                    <span style="font-size:20px;">Cook Time: </span>
+                    <span style="font-size:20px; font-weight:bold; font-style:italic;">{{recipe.cook_time}}</span>
+                </div>
 
+                <div class="col s12 m6">
+                    <i class="material-icons icons_main_recipe">people</i>
+                    <span style="font-size:20px;">Serves:</span>
+                    <span style="font-size:20px; font-weight:bold; font-style:italic;"> {{recipe.serving}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
-			<div class="col s12 m6">
-				<i class="material-icons icons_main_recipe">people</i>
-				<span style="font-size:20px;">Serves:</span>
-				<span style="font-size:20px; font-weight:bold; font-style:italic;"> {{recipe.serving}}</span>
-			</div>
-		</div>
-	</div>
-</div>
+    <div class="row ">
 
+        <div class="col s12 m5 offset-m1 ingredients_direct">
+            <h5 class="center ingr_font_weight ">Ingredients</h5>
+            <ol class="icons_main_recipe">
+                {% for items in recipe.ingredients %}
+                <li class="main_rec_align_items">{{items}}</li>
+                {% endfor %}
+            </ol>
+        </div>
 
+        <div class="col s12 m5 ingredients_direct">
+            <h5 class="center ingr_font_weight">Directions</h5>
+            <ol class="ol_main_recipe">
+                {% for items in recipe.recipe_description %}
+                <li class="main_rec_align_items">{{items}}</li>
+                {% endfor %}
+            </ol>
+        </div>
 
-
-<div class="row ">
-
-	<div class="col s12 m5 offset-m1 ingredients_direct">
-		<h5 class="center ingr_font_weight ">Ingredients</h5>
-		<ol class="icons_main_recipe">
-			{% for items in recipe.ingredients %}
-			<li class="main_rec_align_items">{{items}}</li>
-			{% endfor %}
-		</ol>
-	</div>
-
-	<div class="col s12 m5 ingredients_direct">
-		<h5 class="center ingr_font_weight">Directions</h5>
-		<ol class="ol_main_recipe">
-			{% for items in recipe.recipe_description %}
-			<li class="main_rec_align_items">{{items}}</li>
-			{% endfor %}
-		</ol>
-	</div>
+    </div>
 
 </div>
-
-
-</div>
-
 
 {% endblock %}

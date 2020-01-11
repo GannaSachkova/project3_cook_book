@@ -1,145 +1,122 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <div class="add_recipe_container">
 
-	<div class="h2">
-		<h2 class="heading_shadow">Add New Recipe</h2>
-	</div>
+    <div class="h2">
+        <h2 class="heading_shadow">Add New Recipe</h2>
+    </div>
 
-	<div class="row ">
-		<form action="{{url_for('insertrecipe')}}" method="POST" class="col s12 m10 offset-m1">
-			<div class="row add-recipe-title add_edit_pages_gap">
-				<div class="input-field col s12 ">
-					<i class="material-icons prefix">assignment</i>
-					<input id="recipe_title" name="recipe_title" type="text"
-                    class="validate" required>
-					<label>Recipe Title</label>
-				</div>
-			</div>
+    <div class="row ">
+        <form action="{{url_for('insertrecipe')}}" method="POST" class="col s12 m10 offset-m1">
+            <div class="row add-recipe-title add_edit_pages_gap">
+                <div class="input-field col s12 ">
+                    <i class="material-icons prefix">assignment</i>
+                    <input id="recipe_title" name="recipe_title" type="text" class="validate" required>
+                    <label>Recipe Title</label>
+                </div>
+            </div>
 
+            <div class="row add-recipe-category add_edit_pages_gap">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">assessment</i>
+                    <select id="category" name="category_name" class="validate">
+                        <option value="" disabled selected>Choose Category</option>
+                        {% for cat in categories %}
+                        <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                        {% endfor %}
+                    </select>
+                    <label class="label">Category</label>
+                </div>
+            </div>
 
-			<div class="row add-recipe-category add_edit_pages_gap">
-				<div class="input-field col s12">
-					<i class="material-icons prefix">assessment</i>
-					<select  id="category" name="category_name" class="validate">
-                    <option value="" disabled selected>Choose Category</option>
-                    {% for cat in categories %} 
-                    <option value="{{cat.category_name}}">{{cat.category_name}}</option>
-                    {% endfor %}
-                </select>
-					<label class="label">Category</label>
-				</div>
-			</div>
+            <div class="row add_recipe_cuis add_edit_pages_gap">
+                <div class="input-field col s12  m6">
+                    <i class="material-icons prefix">collections</i>
+                    <select id="cuisine" name="cuisine_type">
+                        <option value="" disabled selected>Choose Cuisine</option>
+                        {% for c in cuisine %}
+                        <option value="{{c.cuisine_type}}"> {{c.cuisine_type}}</option>
+                        {% endfor %}
+                    </select>
+                    <label class="label">Cuisine Type</label>
+                </div>
 
-			<div class="row add_recipe_cuis add_edit_pages_gap">
-				<div class="input-field col s12  m6">
-					<i class="material-icons prefix">collections</i>
-					<select id="cuisine" name="cuisine_type">
-                  <option value="" disabled selected >Choose Cuisine</option>
-                  {% for c in cuisine %}    
-                      <option value="{{c.cuisine_type}}" > {{c.cuisine_type}}</option>
-                  {% endfor %}
-                </select>
-					<label class="label">Cuisine Type</label>
-				</div>
-
-				<div class="col s12 m6 btn_pages_add_edit_recipes">
-					<a class="btn waves-effet waves-light  yellow  lighten-2 add_cuisine"
-						href="{{ url_for('addcuisine') }}" id="cuisine_type">Add a New
+                <div class="col s12 m6 btn_pages_add_edit_recipes">
+                    <a class="btn waves-effet waves-light  yellow  lighten-2 add_cuisine" href="{{ url_for('addcuisine') }}" id="cuisine_type">Add a New
 						Cuisine<i class="material-icons prefix i_add_icon">add</i></a>
-				</div>
-			</div>
+                </div>
+            </div>
 
-
-
-
-			<div class="row add-recipe-ingredients add_edit_pages_gap">
-				<div class="input-field col s12 m6 " id="ingredients">
-					<i class="material-icons prefix">menu</i>
-					<input id="ingredients1" name="ingredients" type="text" class="validate" required placeholder="One Ingredient per  each line.">
-					<label class="label">Ingredients</label>
-				</div>
-				<div class="col s12 m6 btn_pages_add_edit_recipes">
-					<a class="btn waves-effet waves-light yellow  lighten-2 add_new_ingredient "
-						id="add_ingredients">Add
+            <div class="row add-recipe-ingredients add_edit_pages_gap">
+                <div class="input-field col s12 m6 " id="ingredients">
+                    <i class="material-icons prefix">menu</i>
+                    <input id="ingredients1" name="ingredients" type="text" class="validate" required placeholder="One Ingredient per  each line.">
+                    <label class="label">Ingredients</label>
+                </div>
+                <div class="col s12 m6 btn_pages_add_edit_recipes">
+                    <a class="btn waves-effet waves-light yellow  lighten-2 add_new_ingredient " id="add_ingredients">Add
 						another
 						ingredient<i class="material-icons prefix i_add_icon icon_size">add</i></a>
-				</div>
+                </div>
 
-			</div>
+            </div>
 
+            <div class="row add-recipe-dir add_edit_pages_gap">
+                <div class="input-field col s12 m6" id="recipe_description1">
 
-			<div class="row add-recipe-dir add_edit_pages_gap">
-				<div class="input-field col s12 m6" id="recipe_description1">
+                    <i class="material-icons prefix">menu_book</i>
+                    <input id="recipe_description" name="recipe_description" type="text" class="validate" required placeholder="One step per each line.">
+                    <label class="label">Directions</label>
 
-					<i class="material-icons prefix">menu_book</i>
-					<input id="recipe_description" name="recipe_description"
-                    type="text" class="validate" required placeholder="One step per each line." >
-					<label class="label">Directions</label>
-
-				</div>
-				<div class="col s12 m6 btn_pages_add_edit_recipes">
-					<a class="btn waves-effect waves-light yellow  lighten-2 add_next_step "
-						id="add_description_step">Add
+                </div>
+                <div class="col s12 m6 btn_pages_add_edit_recipes">
+                    <a class="btn waves-effect waves-light yellow  lighten-2 add_next_step " id="add_description_step">Add
 						another
 						step<i class="material-icons prefix i_add_icon icon_size">add</i></a>
-				</div>
-			</div>
+                </div>
+            </div>
 
+            <div class="row add-recipe-prep_cook add_edit_pages_gap">
+                <div class="input-field  col s12 m6" id="prep_time">
+                    <i class="material-icons prefix">access_time</i>
+                    <input id="prep_time1" name="prep_time" type="text" class="validate">
+                    <label>Preparation Time (mins)</label>
+                </div>
 
+                <div class="input-field  col s12 m6 add_edit_pages_gap" id="cook_time">
+                    <i class="material-icons prefix">access_alarms</i>
+                    <input id="cook_time1" name="cook_time" type="text" class="validate">
+                    <label>Cooking Time (mins)</label>
+                </div>
+            </div>
 
+            <div class="row add-recipe-tot_serv">
 
+                <div class="input-field  col s12 m6 add_edit_pages_gap">
+                    <i class="material-icons prefix">add_alarm</i>
+                    <input id="total_time1" name="total_time" type="text" class="validate">
+                    <label>Total Time (mins)</label>
+                </div>
 
+                <div class="input-field col s12 m6 add_edit_pages_gap">
+                    <i class="material-icons prefix">people</i>
+                    <input id="serving1" name="serving" type="text" class="validate">
+                    <label>Serving</label>
+                </div>
+            </div>
 
+            <div class="row ">
+                <div class="col s12">
+                    <button class="btn light-blue darken-4 waves-effect waves-light  btn_add_recipe" type="submit" name="action">Add Recipe
+                        <i class="material-icons right">add</i>
+                    </button>
+                    <a href="{{url_for('get_recipes')}}" class="btn waves-effect waves-light  deep-orange darken-3 cancel_button">
+                        <i class="material-icons right">cancel</i>Cancel
+                    </a>
+                </div>
+            </div>
 
-			<div class="row add-recipe-prep_cook add_edit_pages_gap">
-				<div class="input-field  col s12 m6" id="prep_time">
-					<i class="material-icons prefix">access_time</i>
-					<input id="prep_time1" name="prep_time" type="text"
-                    class="validate">
-					<label>Preparation Time (mins)</label>
-				</div>
-
-				<div class="input-field  col s12 m6 add_edit_pages_gap" id="cook_time">
-					<i class="material-icons prefix">access_alarms</i>
-					<input id="cook_time1" name="cook_time" type="text"
-                    class="validate">
-					<label>Cooking Time (mins)</label>
-				</div>
-			</div>
-
-
-			<div class="row add-recipe-tot_serv">
-
-				<div class="input-field  col s12 m6 add_edit_pages_gap">
-					<i class="material-icons prefix">add_alarm</i>
-					<input id="total_time1" name="total_time" type="text"
-                    class="validate">
-					<label>Total Time (mins)</label>
-				</div>
-
-
-				<div class="input-field col s12 m6 add_edit_pages_gap">
-					<i class="material-icons prefix">people</i>
-					<input id="serving1" name="serving" type="text" class="validate">
-					<label>Serving</label>
-				</div>
-			</div>
-
-			<div class="row ">
-				<div class="col s12">
-					<button class="btn light-blue darken-4 waves-effect waves-light  btn_add_recipe" type="submit" name="action">Add Recipe
-                <i class="material-icons right">add</i>
-            </button>
-					<a href="{{url_for('get_recipes')}}" class="btn waves-effect waves-light  deep-orange darken-3 cancel_button">
-						<i class="material-icons right">cancel</i>Cancel
-					</a>
-				</div>
-			</div>
-
-
-		</form>
-	</div>
+        </form>
+    </div>
 
 </div>
 {% endblock %}

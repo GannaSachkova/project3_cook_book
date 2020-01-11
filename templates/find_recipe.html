@@ -1,58 +1,50 @@
 {% extends 'base.html' %} {% block content %}
 
 <div class="find_container ">
-	<div class="h2">
-		<h2 class="heading_shadow">Find a Recipe</h2>
-	</div>
+    <div class="h2">
+        <h2 class="heading_shadow">Find a Recipe</h2>
+    </div>
 
+    <div class="row">
+        <form action="{{ url_for('filterrecipes') }}" method="POST" class="col s12 m6 offset-m3">
 
+            <div class="row add-recipe-category add_edit_pages_gap">
+                <div class="input-field col s12 icon">
+                    <i class="material-icons prefix">assessment</i>
+                    <select id="categories" name="category_name">
+                        <option value="" disabled selected>Choose Category</option>
+                        {% for cat in categories %}
+                        <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                        {% endfor %}
+                    </select>
+                    <label class="label">Category</label>
+                </div>
+            </div>
 
-	<div class="row">
-		<form action="{{ url_for('filterrecipes') }}" method="POST" class="col s12 m6 offset-m3">
+            <div class="row add_recipe_cuis add_edit_pages_gap">
+                <div class="input-field col s12 icon">
+                    <i class="material-icons prefix">collections</i>
+                    <select id="cuisine" name="cuisine_type">
+                        <option value="" disabled selected>Choose Cuisine Type</option>
+                        {% for c in cuisine %}
+                        <option value="{{c.cuisine_type}}">{{c.cuisine_type}}</option>
+                        {% endfor %}
+                    </select>
+                    <label class="label">Cuisine Type</label>
+                </div>
+            </div>
 
+            <div class="row">
+                <div class="col-sm-12 ">
+                    <button class="btn waves-effect waves-light light-blue darken-4 right btn_find" type="submit" name="action">Find Recipes
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </div>
 
-
-			<div class="row add-recipe-category add_edit_pages_gap">
-				<div class="input-field col s12 icon">
-					<i class="material-icons prefix">assessment</i>
-					<select id="categories" name="category_name">
-                  <option value="" disabled selected>Choose Category</option>
-                   {% for cat in categories %}
-                      <option value="{{cat.category_name}}">{{cat.category_name}}</option>
-                    {% endfor %}
-                </select>
-					<label class="label">Category</label>
-				</div>
-			</div>
-
-
-			<div class="row add_recipe_cuis add_edit_pages_gap">
-				<div class="input-field col s12 icon">
-					<i class="material-icons prefix">collections</i>
-					<select id="cuisine" name="cuisine_type">
-                  <option value="" disabled selected>Choose Cuisine Type</option>
-                  {% for c in cuisine %}
-                      <option value="{{c.cuisine_type}}" >{{c.cuisine_type}}</option>
-                  {% endfor %}
-                </select>
-					<label class="label">Cuisine Type</label>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-sm-12 ">
-					<button class="btn waves-effect waves-light light-blue darken-4 right btn_find" type="submit" name="action">Find Recipes
-                <i class="material-icons right">send</i>
-            </button>
-				</div>
-			</div>
-
-		</form>
-	</div>
+        </form>
+    </div>
 
 </div>
-
-
-
 
 {% endblock %}
