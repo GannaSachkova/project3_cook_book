@@ -53,9 +53,6 @@
  .btn_edit.btn_edit1, .btn.cancel_button.btn.cancel_button1 {
      margin-bottom: 0px;
 }
-.btn, .btn-large, .btn-flat{
-    height: inherit;
-}
  .recipespage_btn {
      display: inline-block;
      flex-wrap: wrap;
@@ -218,7 +215,7 @@
  .collapsible-header {
      display: flow-root;
 }
- .btneditview {
+.btneditview {
      margin-right: 10px;
 }
 .row .col.s9.offset-s1.xl3.recipespage_btn, .row .col.s6.recipespage_btn{
