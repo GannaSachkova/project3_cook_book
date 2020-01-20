@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, request, session, g, abort, flash
+from flask import Flask , render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -50,6 +50,7 @@ def editrecipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     all_categories = mongo.db.categories.find()
     all_cuisines = mongo.db.cuisine_type.find()
+    print (all_cuisines)
     return render_template('edit_recipe.html', recipe=the_recipe, categories=all_categories, cuisine=all_cuisines)
 
 @app.route('/updaterecipe/<recipe_id>', methods=["POST"])
@@ -81,10 +82,11 @@ def recipemainpage(recipe_id):
 
 @app.route('/deleterecipe/<recipe_id>')
 def deleterecipe(recipe_id):
-    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+    mongo.db.recipes.remove({'_id':ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
 
-# CUISINE
+    
+    # CUISINE
 
 @app.route('/get_cuisines')
 def get_cuisines():
@@ -102,7 +104,8 @@ def insertcuisine():
 
 @app.route('/editcuisine/<cuisine_id>')
 def editcuisine(cuisine_id):
-    return render_template('edit_cuisine.html', cuisine=mongo.db.cuisine_type.find_one({'_id':ObjectId(cuisine_id)}))
+    the_cuisine= mongo.db.cuisine_type.find_one({'_id':ObjectId(cuisine_id)})
+    return render_template('edit_cuisine.html', cuisine=the_cuisine)
 
 @app.route('/updatecuisine/<cuisine_id>', methods=['POST'])
 def updatecuisine(cuisine_id):

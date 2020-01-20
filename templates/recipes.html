@@ -13,28 +13,28 @@
         </div>
     </div>
 
-    <div>
-        <ul class="row collapsible collapsible_container">
+    <div class="container  recipes_list">
+        <ul class="row">
             {% for recipe in recipes %}
-            <li class="col s12 m10 offset-m1">
+            <li class="col s12 m3">
 
-                <div class="collapsible-header">
-                    <div class="col s12 xl8 recipe_header">
-                        <i class="material-icons  ">expand_more</i>
-                        <strong>{{recipe.recipe_title}}</strong> - {{recipe.category_name}} - {{recipe.cuisine_type}} - &nbsp;Cook time:
-                        <em>{{recipe.cook_time}} minutes</em>
+                <div class="collapsible-header recipe_item">
+                    <div class="col s12 recipe_header">
+                       <a href="{{url_for('recipemainpage', recipe_id=recipe._id)}}" class="strong" > <strong>{{recipe.recipe_title}}</strong> </a> 
+                       <p class="margin"> <i class="italic">Category: </i>{{recipe.category_name}} </p> 
+                       <p class="margin"><i class="italic">Cuisine: </i>{{recipe.cuisine_type}} </p> 
+                       <p class="margin"><i class="italic">Cook time: </i>{{recipe.cook_time}} minutes</p> 
                     </div>
 
                     <div class="col s9 offset-s1 xl3  recipespage_btn">
-                        <a href="{{url_for('recipemainpage', recipe_id=recipe._id)}}" class="btn light-blue darken-1 btn_view waves-effect waves-light btn-small btneditview recipespage_btn" type="submit">
-                            <i class="material-icons ">visibility</i>
+                        <!-- <a href="{{url_for('recipemainpage', recipe_id=recipe._id)}}" class="btn light-blue darken-1 btn_view waves-effect waves-light btn-small btneditview recipespage_btn" type="submit">
                             <a href="{{url_for('editrecipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn yellow  lighten-2 btneditview btn-small recipespage_btn"><i class="material-icons ">edit</i></a>
 
-                            <a href="#modal1" class="waves-effect waves-light btn deep-orange darken-3 btneditview modal-trigger btn-small recipespage_btn"><i class="material-icons">delete_forever</i></a>
+                            <a href="#modal1" class="waves-effect waves-light btn deep-orange darken-3 btneditview modal-trigger btn-small recipespage_btn"><i class="material-icons">delete_forever</i></a> -->
 
                             <!-- Modal Structure -->
 
-                            <div id="modal1" class="modal modal-fixed-footer col s10 m6">
+                            <!-- <div id="modal1" class="modal modal-fixed-footer col s10 m6">
                                 <div class="modal-content">
                                     <div class="row">
                                         <div class="col s2 offset-s3 m2 offset-m4 l2 offset-l5">
@@ -51,12 +51,12 @@
                                     <a href="#!" class="modal-close waves-effect waves-green  btn deep-green darken-3 btn_modal">No,
 												cancel!</a>
                                 </div>
-                            </div>
+                            </div> -->
 
                     </div>
                 </div>
 
-                <div class="collapsible-body ">
+                <!-- <div class="collapsible-body ">
 
                     <ul class="collapsible" data-collapsible="expandable">
                         <li>
@@ -74,7 +74,7 @@
 
                     </ul>
 
-                </div>
+                </div> -->
 
             </li>
             {% endfor %}
