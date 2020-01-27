@@ -98,41 +98,10 @@ def addcuisine():
 
 @app.route('/insertcuisine', methods=['POST'])
 def insertcuisine():
-    cuisines = mongo.db.cuisine_type
+    cuisines = mongo.db.cuisine_type 
+    the_recipe = mongo.db.recipes
     cuisines.insert_one(request.form.to_dict())
-    return redirect(url_for('get_cuisines'))
-
-@app.route('/editcuisine/<cuisine_id>')
-def editcuisine(cuisine_id):
-    the_cuisine= mongo.db.cuisine_type.find_one({'_id':ObjectId(cuisine_id)})
-    return render_template('edit_cuisine.html', cuisine=the_cuisine)
-
-@app.route('/updatecuisine/<cuisine_id>', methods=['POST'])
-def updatecuisine(cuisine_id):
-    cuisine=mongo.db.cuisine_type
-    cuisine.update({'_id': ObjectId(cuisine_id) },
-                        {"$set": {
-                        'cuisine_type': request.form.get('cuisine_type')
-                        }})   
-
-    return redirect(url_for('get_cuisines'))
-
-@app.route('/inserteditcuisine', methods=['POST'])
-def inserteditcuisine():
-    cuisines=mongo.db.cuisine_type
-    cuisines.insert_one(request.form.to_dict())
-    return redirect(url_for('get_cuisines'))
-
-@app.route('/deletecuisine/<cuisine_id>')
-def deletecuisine(cuisine_id):
-    mongo.db.cuisine_type.remove({'_id': ObjectId(cuisine_id)})
-    return redirect(url_for('get_cuisines'))
-
-@app.route('/insertcuisineedit', methods=['POST'])
-def insertcuisineedit():
-    cuisines = mongo.db.cuisine_type
-    cuisines.insert_one(request.form.to_dict())
-    return redirect(url_for('get_cuisines'))
+    return render_template('add_recipe.html', recipe=the_recipe)
 
 # Search Recipe
 
@@ -147,10 +116,14 @@ def filterrecipes():
     recipes = mongo.db.recipes
     cuisine_type = request.form.get('cuisine_type')
     category_name = request.form.get('category_name')
+    results_category_name = list()
+    results_cuisine_type = list()
+    if(category_name):
+        results_category_name = list(recipes.find({"category_name": category_name}))
+    if(cuisine_type):
+        results_cuisine_type = list(recipes.find({"cuisine_type": cuisine_type}))
 
-    results_category_name = recipes.find({"category_name": category_name})
-    results_cuisine_type = recipes.find({"cuisine_type": cuisine_type})
-    return render_template("results.html", results_category_name=results_category_name, results_cuisine_type=results_cuisine_type)
+    return render_template("results.html", results=results_category_name + results_cuisine_type)
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))

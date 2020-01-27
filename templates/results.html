@@ -1,62 +1,57 @@
 {% extends 'base.html' %} {% block content %}
-<div class="result_container ">
+<div class="result_container">
 
-    <div class="h2">
-        <h2 class="heading_shadow">Search Results</h2>
-    </div>
+	<div class="h2">
+		<h2 class="heading_shadow">Search Results</h2>
+	</div>
 
-    <div>
-        <ul class="row collapsible collapsible_container">
+	<div class="row">
+		<ul class="collapsible collapsible_container col s12 m6 offset-m3">
 
-            {% for result in results %}
-            <li class="col s12 m8 offset-m2">
-                <div class="collapsible-header">
-                    <div class="col s12 m12 l12 xl10 recipe_header">
-                        <i class="material-icons  ">expand_more</i>
-                        <strong>{{result.recipe_title}}</strong> &nbsp;- {{result.category_name}} - {{result.cuisine_type}} - &nbsp;
-                        <strong>Cook time: {{result.cook_time}} minutes</strong>
+			{% for result in results %}
+			<li>
+				<div class="row collapsible-header">
+					<div class="recipe_header col s12 m10">
+						<i class=" material-icons result.page">expand_more</i>
+						<strong>{{result.recipe_title}}</strong> - {{result.category_name}} - {{result.cuisine_type}} -
+						<strong>Cook time: {{result.cook_time}} minutes</strong>
+					</div>
+					<div class=" col s12 m2 offset-s3 ">
+						<a href=" {{url_for( 'recipemainpage', recipe_id=result._id)}} "
+							class=" waves-effect waves-light btn light-blue darken-1 btn_edit deleteEdit "><i class=" material-icons
+                        left ">visibility</i></a>
+						<a href="#modal10"
+							class=" waves-effect waves-light btn modal-trigger deep-orange darken-3 btn_delete deleteEdit "><i class="
+                        material-icons deleteIcon ">delete_forever</i></a>
+
+						<!-- Modal Structure -->
+
+						<div id="modal10" class="modal modal-fixed-footer col s10 m6">
+                <div class="modal-content">
+                    <div class="row">
+                        <div class="col s2 offset-s3 m2 offset-m4 l2 offset-l5">
+                            <i class="material-icons warning">warning</i></div>
                     </div>
-                    <div class="col s12 m8 l8 xl2 offset-s2  offset-m4 offset-l4 recipespage_btn">
-                        <a href="{{url_for('recipemainpage', recipe_id=result._id)}}" class="waves-effect waves-light btn light-blue darken-1 btn_edit deleteEdit"><i class="material-icons left">visibility</i></a>
-                        <a href="{{url_for('deleterecipe' , recipe_id=result._id)}}" class="waves-effect waves-light btn deep-orange darken-3 btn_delete deleteEdit"><i class="material-icons deleteIcon">delete_forever</i></a>
-                    </div>
+                    <h4 class="modal_head">Are you sure you want delete it?</h4>
+                    <p class="modal_p">You won't be able to revert this!</p>
                 </div>
 
-                <div class="collapsible-body">
-                    <span>
-                        <ul class="collapsible" data-collapsible="expandable">
-                            <li>
-                                <div class="collapsible-header">
-                                    <i class="material-icons">local_grocery_store</i>Ingredients
-                                </div>
-                                <div class="collapsible-body"><span>{{result.ingredients}}</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">format_list_numbered</i>Directions</div>
-                <div class="collapsible-body">{{result.recipe_description}}</div>
-            </li>
-        </ul>
-        </span>
-    </div>
-    </li>
-    {% endfor %} {% for result in results_category_name %}
-    <li>
-        <div class="row collapsible-header">
-            <div class="recipe_header col s12 m10">
-                <i class=" material-icons ">expand_more</i>
-                <strong>{{result.recipe_title}}</strong> - {{result.category_name}} - {{result.cuisine_type}} -
-                <strong>Cook time: {{result.cook_time}} minutes</strong>
-            </div>
-            <div class=" col s12 m2 offset-s3 ">
-                <a href=" {{url_for( 'recipemainpage', recipe_id=result._id)}} " class=" waves-effect waves-light btn light-blue darken-1 btn_edit deleteEdit "><i class=" material-icons
-                        left ">visibility</i></a>
-                <a href=" {{url_for( 'deleterecipe' , recipe_id=result._id)}} " class=" waves-effect waves-light btn deep-orange darken-3 btn_delete deleteEdit "><i class="
-                        material-icons deleteIcon ">delete_forever</i></a>
-            </div>
-        </div>
+							<div class="modal-footer col s12">
+								<a href="{{url_for( 'deleterecipe' , recipe_id=result._id)}}"
+									class="modal-close waves-effect waves-green  btn deep-orange darken-3 btn_modal">Yes,
+									delete
+									it!</a>
+								<a href="#!"
+									class="modal-close waves-effect waves-green  btn deep-green darken-3 btn_modal">No,
+									cancel!</a>
+							</div>
+						</div>
+					</div>
+				</div>
+	</div>
 
-        <div class=" collapsible-body ">
-            <span>
+	<div class=" collapsible-body ">
+		<span>
                     <ul class=" collapsible " data-collapsible=" expandable ">
                         <li>
                             <div class=" collapsible-header "><i class=" material-icons ">local_grocery_store</i>Ingredients</div>
@@ -68,69 +63,18 @@
                         </li>
                     </ul>
                 </span>
-        </div>
-    </li>
-    {% endfor %} {% for result in results_cuisine_type %}
-    <li class="col s12 m8 offset-m2">
-        <div class="row collapsible-header">
-            <div class="recipe_header col s12 m10">
-                <i class=" material-icons ">expand_more</i>
-                <strong>{{result.recipe_title}}</strong> - {{result.category_name}} - {{result.cuisine_type}} -
-                <strong>Cook time: {{result.cook_time}} minutes</strong>
-            </div>
-            <div class=" col s8 m2 offset-s3 ">
-                <a href=" {{url_for( 'recipemainpage', recipe_id=result._id)}} " class=" waves-effect waves-light btn light-blue darken-1 btn_edit deleteEdit "><i class=" material-icons
-                        left ">visibility</i></a>
-                <a href="#modal4" class=" waves-effect waves-light btn deep-orange darken-3 btn_delete deleteEdit modal-trigger "><i class="
-                        material-icons deleteIcon ">delete_forever</i></a>
-
-                <!-- Modal Structure -->
-
-                <div id="modal4" class="modal modal-fixed-footer col s8 m6">
-                    <div class="modal-content">
-                        <div class="row">
-                            <div class="col s2 offset-s3 m2 offset-m4 l2 offset-l5">
-                                <i class="material-icons warning">warning</i></div>
-                        </div>
-                        <h4 class="modal_head">Are you sure you want delete it?</h4>
-                        <p class="modal_p">You won't be able to revert this!</p>
-                    </div>
-
-                    <div class="modal-footer col s12">
-                        <a href="{{url_for('deleterecipe', recipe_id=result._id)}}" class="modal-close waves-effect waves-green  btn deep-orange darken-3 btn_modal">Yes,
-												delete
-												it!</a>
-                        <a href="#!" class="modal-close waves-effect waves-green  btn deep-green darken-3 btn_modal">No,
-												cancel!</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class=" collapsible-body ">
-            <span>
-                    <ul class=" collapsible " data-collapsible=" expandable ">
-                        <li>
-                            <div class=" collapsible-header "><i class=" material-icons ">local_grocery_store</i>Ingredients</div>
-                            <div class=" collapsible-body ">{{result.ingredients}}</div>
-                        </li>
-                        <li>
-                            <div class=" collapsible-header "><i class=" material-icons ">format_list_numbered</i>Directions</div>
-                            <div class=" collapsible-body ">{{result.recipe_description}}</div>
-                        </li>
-                    </ul>
-                </span>
-        </div>
-    </li>
-    {% endfor %}
-    </ul>
-    <div class=" row ">
-        <div class=" col s8 offset-s2 ">
-            <a href=" {{ url_for( 'findrecipe') }} " class=" waves-effect waves-light btn light-blue darken-4  go_back_to_search ">
-                <i class=" material-icons right ">cancel</i>Go back to Search
-            </a>
-        </div>
-    </div>
+	</div>
+	</li>
+	{% endfor %}
+	</ul>
+	<div class=" row ">
+		<div class=" col s8 offset-s2 ">
+			<a href=" {{ url_for( 'findrecipe') }} "
+				class=" waves-effect waves-light btn light-blue darken-4  go_back_to_search ">
+				<i class=" material-icons right ">cancel</i>Go back to Search
+			</a>
+		</div>
+	</div>
 
 </div>
 </div>

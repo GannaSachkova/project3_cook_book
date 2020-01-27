@@ -44,41 +44,45 @@
                     <label>Cuisine Type</label>
                 </div>
 
-                <div class="col s12 m6">
-                                                                                                    
-                    <a class="btn waves-effet waves-light btn_add btn_add yellow  lighten-2 add_cuisine" href="{{url_for('editcuisine', cuisine_id = cuisine._id)}}" id="cuisine_type">Edit Cuisines<i class="material-icons prefix i_add_icon">add</i></a>
-                </div>
+                
             </div>
 
             <div class="row add-recipe-ingredients add_edit_pages_gap">
                 <div class="input-field col s12 m6" id="ingredients3">
-                    <i class="material-icons prefix">menu</i> {% for item in recipe.ingredients %} {% if item == recipe.ingredients[0] %}
+                    <i class="material-icons prefix">menu</i>
+                    {%if not recipe.recipe_description %}
+                    <input required placeholder="1 cup Flour" id="ingredients4" name="ingredients" type="text" value="" class="validate">
+                    <label>Ingredients</label>
+                    {%else%}
+                    {% for item in recipe.ingredients %} {% if item == recipe.ingredients[0] %}
                     <input required placeholder="1 cup Flour" id="ingredients4" name="ingredients" type="text" value="{{item}}" class="validate">
                     <label>Ingredients</label>
                     {% else %}
-                    <div class="new-ingredient">
+                    <div class="new-description-step">
                         <div class="input-field col s9">
-                            <input type="text" name="ingredients5" id="ingredients" class="validate" value="{{item}}" required>
+                            <input type="text" name="ingredients5" id="ingredients5" class="validate" value="{{item}}" required>
                         </div>
                         <div class="col s1">
-                            <a class="btn-floating waves-effect waves-light" id="remove_ingredient"><i class="material-icons">remove</i></a>
+                            <a class="btn-floating waves-effect waves-light" id="remove_ingredient1"><i class="material-icons">remove</i></a>
                         </div>
                     </div>
                     {% endif %} {% endfor %}
-
+                    {% endif %}
                 </div>
 
                 <div class="col s12 m6">
-                    <a class="btn waves-effet waves-light yellow  lighten-2 add_new_ingredient " id="add_ingredients">Add another
+                    <a class="btn waves-effet waves-light yellow  lighten-2 add_new_ingredient " id="add_ingredients1">Add another
 							ingredient<i class="material-icons prefix i_add_icon">add</i></a>
                 </div>
             </div>
 
             <div class="row add-recipe-dir add_edit_pages_gap">
                 <div class="input-field col s12 m6" id="recipe_description3">
-
-                    <i class="material-icons prefix">menu_book</i>
-                    <i class="material-icons prefix">menu_book</i> {% for item in recipe.ingredients %} {% if item == recipe.recipe_description[0] %}
+                    <i class="material-icons prefix">menu_book</i> {%if not recipe.recipe_description %}
+                    <input required placeholder="Preheat oven..." id="recipe_description2" name="recipe_description2" type="text" value="" class="validate">
+                    <label>Directions</label>
+                    {%else%}
+                    {% for item in recipe.recipe_description %} {% if item == recipe.recipe_description[0] %}
                     <input required placeholder="Preheat oven..." id="recipe_description2" name="recipe_description2" type="text" value="{{item}}" class="validate">
                     <label>Directions</label>
 
@@ -92,12 +96,12 @@
                         </div>
                     </div>
                     {% endif %} {% endfor %}
+                    {% endif %}
                 </div>
 
                 <div class="col s12 m6">
-                    <a class="btn waves-effect waves-light yellow  lighten-2 add_next_step" id="add_description_step">Add
-								another
-								step<i class="material-icons prefix i_add_icon">add</i></a>
+                    <a class="btn waves-effect waves-light yellow  lighten-2 add_next_step" id="add_description_step1">Add
+								another step<i class="material-icons prefix i_add_icon">add</i></a>
                 </div>
             </div>
 

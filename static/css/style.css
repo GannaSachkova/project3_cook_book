@@ -75,7 +75,7 @@ a {
      background: rgba(121, 123, 128, 0.05);
      border-radius: 2px;
      border-bottom-color: rgba(121, 123, 128, 0.05);
-     padding: 10px 0px;
+     padding: 10px 10px 20px;
      margin: 15px;
 }
  .add-recipe-category, .add-recipe-ingredients, .add-recipe-prep_cook {
@@ -120,11 +120,9 @@ a {
      margin-right: auto;
      margin-left: auto;
 }
- .collapsible-header i {
-     margin-right: 0;
-}
+
  .homepage-container {
-     height: 74vh;
+     height: 85vh;
      background-size: cover;
      background-position: center;
      background-color: rgb(244, 247, 245);
@@ -227,6 +225,9 @@ a {
  .collapsible-header {
      display: flow-root;
 }
+ .collapsible-header i {
+     margin-right: 0;
+}
 .btneditview {
      margin-right: 10px;
 }
@@ -275,6 +276,8 @@ a {
      font-size: 80px;
      border-color: #facea8;
      color: #f8bb86;
+     padding-top: 20px;
+     padding-left: 25px;
 }
  .modal .modal-footer {
      text-align: center;
