@@ -225,9 +225,9 @@ a {
  .collapsible-header {
      display: flow-root;
 }
- .collapsible-header i {
+ /* .collapsible-header i {
      margin-right: 0;
-}
+} */
 .btneditview {
      margin-right: 10px;
 }
