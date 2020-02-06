@@ -117,8 +117,6 @@ The website is designed using following technologies:
 
 - [Heroku](www.heroku.com) - Heroku is a cloud platform that lets companies build, deliver, monitor and scale apps — we're the fastest way to go from idea to URL, bypassing all those infrastructure headaches;
 
-- [Gifox](https://gifox.io/) - Tool was used to record the gif presented in the demo section of this README files;
-
 - [Am I Responsive](http://ami.responsivedesign.is/#) - Online tool was used to display the project on various devices;
 
 - [Moqups](https://moqups.com/) - Online tool that was used to create wireframes.
@@ -130,11 +128,11 @@ The website is designed using following technologies:
 ### Testing
 Resources & Tools Used for Testing
 
-* HTML [W3 HTML Validator](https://validator.w3.org/)
+* HTML  - [W3 HTML Validator](https://validator.w3.org/)
 
-* CSS  [W3 CSS Validator](https://jigsaw.w3.org/css-validator/)
+* CSS   - [W3 CSS Validator](https://jigsaw.w3.org/css-validator/)
 
-* online Beautifier [freeformatter.com](https://www.freeformatter.com) and [CSS Formatter](https://www.cleancss.com)
+* online Beautifier - [freeformatter.com](https://www.freeformatter.com) and [CSS Formatter](https://www.cleancss.com)
 
 The application was build using Google Chrome.
 
@@ -161,7 +159,6 @@ Go to the "Find Recipe" page and select a filtering parameter then click the but
 <a name="deployment"/>
 
 ## Deployment
-
 Deployment and source control was carried out via GitHub and Heroku. The repository location is as follows: [https://github.com/GannaSachkova/project3_cook_book](https://github.com/GannaSachkova/project3_cook_book)
 
 Heroku App Location is as follows: [https://cook-book-project3.herokuapp.com/](https://cook-book-project3.herokuapp.com/)
@@ -186,5 +183,4 @@ Heroku App Location is as follows: [https://cook-book-project3.herokuapp.com/](h
 All materials and content in this project are solely for educational purposes.
 
 **Contact**
-
 Created by [Ganna Sachkova](mailto:dorogaya1810@gmail.com).
